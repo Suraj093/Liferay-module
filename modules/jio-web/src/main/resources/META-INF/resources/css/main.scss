@@ -1,0 +1,70 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+html, body{
+height: 100%;
+width: 100%;
+}
+
+.plan-box{
+padding: 16px 20px;
+background-color: #d4eebb;
+border-radius: 10px;
+
+}
+.plan-box-title span{
+    background-color: #499f11;
+    padding: 5px 16px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.plan-box-price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+.plan-box-price .price p{
+    font-size: 25px;
+    font-weight: 700;
+    color: green;
+}
+
+.plan-box-price .plan p{
+    color: red;
+    font-weight: 900;
+    font-family: sans-serif;
+    line-height: 13px;
+}
+
+.plan-details a, 
+.plan-details a:hover{
+    text-decoration: none;
+    color: #2d66da;
+    font-weight: 500;
+}
+.plan-validity{
+     display: flex;
+    justify-content: space-between;
+}
+
+.plan-validity .validity dt,
+.plan-validity .data dt{
+    font-size: 18px;
+    color: gray;
+    text-transform: uppercase;
+}
+
+.plan-validity .validity dd,
+.plan-validity .data dd{
+    font-size: 20px;
+    color: green;
+    font-weight: 700;
+}
+

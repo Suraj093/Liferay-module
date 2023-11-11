@@ -1,0 +1,10 @@
+Bundle-Name: jio-api
+Bundle-SymbolicName: com.jio.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.jio.exception,\
+	com.jio.model,\
+	com.jio.service,\
+	com.jio.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../jio-service/service.xml

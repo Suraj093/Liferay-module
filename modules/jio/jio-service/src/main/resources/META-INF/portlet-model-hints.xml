@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.jio.model.Plan">
+		<field name="uuid" type="String" />
+		<field name="planId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="price" type="String" />
+		<field name="validity" type="String" />
+		<field name="InternetData" type="String" />
+		<field name="subscription" type="String" />
+		<field name="planName" type="String" />
+		<field name="voice" type="String" />
+		<field name="sms" type="String" />
+		<field name="is5GEnable" type="Boolean" />
+		<field name="isPlanActive" type="Boolean" />
+		<field name="planEffectiveDate" type="String" />
+		<field name="planTermedDate" type="String" />
+	</model>
+</model-hints>

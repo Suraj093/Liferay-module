@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.jio">
+	<namespace>JIO</namespace>
+	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" remote-service="false" session-factory="sampleSessionFactory" table="foo" tx-manager="sampleTransactionManager uuid="true"">-->
+	<entity name="Plan" local-service="true" remote-service="true" uuid="true">
+
+		<!-- PK fields -->
+
+		<column name="planId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		
+		<!-- Custom fields -->
+		
+        <column name="price" type="String"></column>
+        <column name="validity" type="String"></column>
+        <column name="InternetData" type="String"></column>
+        <column name="subscription" type="String"></column>
+        <column name="planName" type="String"></column>
+        <column name="voice" type="String"></column>
+        <column name="sms" type="String"></column>
+        <column name="is5GEnable" type="Boolean"></column>
+        <column name="isPlanActive" type="Boolean"></column>
+        <column name="planEffectiveDate" type="String"></column>
+        <column name="planTermedDate" type="String"></column>
+	</entity>
+</service-builder>

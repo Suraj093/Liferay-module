@@ -1,0 +1,10 @@
+Bundle-Name: max-api
+Bundle-SymbolicName: com.max.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.max.exception,\
+	com.max.model,\
+	com.max.service,\
+	com.max.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../max-service/service.xml

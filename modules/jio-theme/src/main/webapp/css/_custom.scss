@@ -1,0 +1,51 @@
+@import 'clay/atlas-variables';
+@import 'clay/cadmin-variables';
+
+
+a,
+a:hover {
+	text-decoration: none;
+	color: #6b6c7e;
+}
+
+.custom-dropdown {
+	position: static
+}
+
+.dropdown-menu-custom {
+	max-width: 100% !important;
+}
+
+.top-header-section {
+	background: blueviolet;
+}
+
+.top-header-content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.top-header-content .btn-monospaced {
+	align-items: center;
+	display: inline-flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-bottom: 0;
+	padding-left: 0;
+	padding-right: 0;
+	padding-top: 0;
+	text-align: center;
+	white-space: normal;
+	width: 1rem;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	background: transparent;
+	    border: 0;
+    outline: 0;
+    height: 20px;
+}
+
+.top-header-content .btn-section {
+	display: none;
+}

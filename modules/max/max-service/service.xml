@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds"
+	package-path="com.max">
+	<namespace>MAX</namespace>
+	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" 
+		remote-service="false" session-factory="sampleSessionFactory" table="foo" 
+		tx-manager="sampleTransactionManager uuid="true""> -->
+	<entity name="Maxuser" local-service="true"
+		remote-service="true" table="max_user" uuid="true">
+
+		<!-- PK fields -->
+
+		<column name="maxUserId" primary="true" type="long"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+
+		<!-- Other fields -->
+
+		<column name="maxUserFirstName" type="String"></column>
+		<column name="maxUserLastName" type="String"></column>
+		<column name="maxUserContactNumber" type="String"></column>
+		<column name="maxUserEmailId" type="String"></column>
+		<column name="maxUserDateOfBirth" type="String"></column>
+
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="maxUserFirstName" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="CompanyId" return-type="Collection">
+			<finder-column name="companyId" />
+		</finder>
+
+		<finder return-type="Collection" name="GroupId">
+			<finder-column name="groupId"></finder-column>
+		</finder>
+
+		<finder return-type="Collection" name="G_M">
+			<finder-column name="groupId"></finder-column>
+			<finder-column name="maxUserId"></finder-column>
+		</finder>
+
+	</entity>
+	<exceptions>
+		<exception>maxUserFirstName</exception>
+		<exception>maxUserLastName</exception>
+		<exception>maxUserContactNumber</exception>
+		<exception>maxUserEmailId</exception>
+		<exception>maxUserDateOfBirth</exception>
+	</exceptions>
+</service-builder>

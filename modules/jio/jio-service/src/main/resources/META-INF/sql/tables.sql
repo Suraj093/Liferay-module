@@ -1,0 +1,42 @@
+create table JIO_Plan (
+	uuid_ VARCHAR(75) null,
+	planId LONG not null primary key,
+	groupId LONG,
+	companyId LONG,
+	userId LONG,
+	userName VARCHAR(75) null,
+	createDate DATE null,
+	modifiedDate DATE null,
+	price VARCHAR(75) null,
+	validity VARCHAR(75) null,
+	InternetData VARCHAR(75) null,
+	subscription VARCHAR(75) null,
+	planName VARCHAR(75) null,
+	voice VARCHAR(75) null,
+	sms VARCHAR(75) null,
+	is5GEnable BOOLEAN,
+	isPlanActive BOOLEAN,
+	planEffectiveDate VARCHAR(75) null,
+	planTermedDate VARCHAR(75) null
+);
+
+create table JIO_plan (
+	uuid_ VARCHAR(75) null,
+	planId LONG not null primary key,
+	groupId LONG,
+	companyId LONG,
+	userId LONG,
+	userName VARCHAR(75) null,
+	createDate DATE null,
+	modifiedDate DATE null,
+	price VARCHAR(75) null,
+	validity VARCHAR(75) null,
+	InternetData VARCHAR(75) null,
+	planName VARCHAR(75) null,
+	voice VARCHAR(75) null,
+	sms VARCHAR(75) null,
+	is5GEnable BOOLEAN,
+	isPlanActive BOOLEAN,
+	planEffectiveDate VARCHAR(75) null,
+	planTermedDate VARCHAR(75) null
+);

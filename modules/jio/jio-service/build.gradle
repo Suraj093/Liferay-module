@@ -1,0 +1,11 @@
+dependencies {
+	compile project(":modules:jio:jio-api")
+
+	compileOnly group: "com.liferay.portal", name: "release.dxp.api"
+}
+
+buildService {
+	apiDir = "../jio-api/src/main/java"
+}
+
+group = "com.jio"

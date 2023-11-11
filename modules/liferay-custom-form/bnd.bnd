@@ -1,0 +1,4 @@
+Bundle-Name: liferay-custom-form
+Bundle-SymbolicName: com.liferay.custom.form
+Bundle-Version: 1.0.0
+Export-Package: com.liferay.custom.form.constants

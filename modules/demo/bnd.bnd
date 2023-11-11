@@ -1,0 +1,8 @@
+Bundle-Name: demo
+Bundle-SymbolicName: com.demo
+Bundle-Version: 1.0.0
+Export-Package: com.demo.constants
+Import-Package:\
+    !org.apache.*,\
+    \
+    *
