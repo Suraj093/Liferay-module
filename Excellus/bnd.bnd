@@ -1,0 +1,4 @@
+Bundle-Name: Excellus
+Bundle-SymbolicName: com.excellus
+Bundle-Version: 1.0.0
+Export-Package: com.excellus.constants
