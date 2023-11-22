@@ -1,0 +1,4 @@
+Bundle-Name: dummy
+Bundle-SymbolicName: com.dummy.pannel
+Bundle-Version: 1.0.0
+Export-Package: com.dummy.pannel.constants
