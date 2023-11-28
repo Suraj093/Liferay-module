@@ -1,3 +1,4 @@
+<%@ include file="/init.jsp"%>
 <%@page import="java.util.Set"%>
 <%@page import="com.liferay.portal.kernel.util.PortalUtil"%>
 <%@page import="com.liferay.portal.kernel.service.UserLocalServiceUtil"%>
@@ -7,7 +8,6 @@
 <%@ taglib uri="http://liferay.com/tld/portlet" prefix="liferay-portlet"%>
 <%@ taglib prefix="clay" uri="http://liferay.com/tld/clay"%>
 <%@page import="java.util.List"%>
-<%@ include file="/init.jsp"%>
 <portlet:defineObjects />
 
 <%  List<User> userList = (List<User>)request.getAttribute("studentList"); 
@@ -53,10 +53,14 @@ String currentUrl = PortalUtil.getCurrentURL(request);
 				value="<%= String.valueOf(lfrUser.getUserId()) %>" />
 		</portlet:renderURL>
 
-		<liferay-ui:search-container-column-text name="Action"
+		<%-- <liferay-ui:search-container-column-text name="Action"
 			href="<%= rowURL %>">
 			<clay:icon symbol="view" />
-        </liferay-ui:search-container-column-text>
+        </liferay-ui:search-container-column-text> --%>
+        
+        <liferay-ui:search-container-column-jsp name="Action" align="center" path="/action_attributes.jsp">
+        
+        </liferay-ui:search-container-column-jsp>
 
 	</liferay-ui:search-container-row>
 
