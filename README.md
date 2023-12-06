@@ -28,3 +28,53 @@ The below code is going to update in WEB-INF under theme.
 	
 <#include "${full_templates_path}/top-navbar.ftl" />
 ```
+
+### Create custom widget template and get structure value in widget template
+
+```
+<#if entries?has_content>
+	<div class="row">
+	<#list entries as curEntry>
+		<#assign assetRenderer = curEntry.getAssetRenderer() />
+		<#assign className = assetRenderer.getClassName() />
+		<#if className == "com.liferay.journal.model.JournalArticle">
+			<#assign docXml=saxReaderUtil.read(assetRenderer.getArticle().getContent()) />
+			<#assign short_description=docXml.valueOf("//dynamic-element[@field-reference='shortDescription']/dynamic-content/text()") />
+			<#assign imagePath = docXml.valueOf("//dynamic-element[@field-reference='newsImage']/dynamic-content/text()") />
+			<#assign imagePathObj = jsonFactoryUtil.createJSONObject(imagePath) />
+			 <#assign viewDetailURL = "fullview?assetEntry="+entry.getEntryId()  />
+	        <div class="col-md-4">	
+	          <div class="card">
+							${imagePathObj.url}
+               <img src="${imagePathObj.url}" class="card-img-top" alt="${imagePathObj.alt}">
+                 <div class="card-body">
+									 <#if title?has_content>
+										 <h2>${title}</h2>
+										</#if>
+                    <#if short_description?has_content>
+                      <p class="card-text">${short_description}</p>
+										</#if>
+									 <#assign fullContentUrl = "web/guest/article-details-view?assetEntry="+entry.getEntryId() />
+                       <a href="${fullContentUrl}" class="btn btn-primary">Read More</a>
+                 </div>
+            </div>
+			    </div>	
+		 </#if>
+	</#list>
+		</div>
+</#if>
+
+----------------------------------------------------------------------------------------
+
+Full Details content code :- 
+
+<#assign assetEntryQuery = request.getParameter("assetEntry")?eval />
+
+<#assign assetEntryLocalServiceUtil = staticUtil['com.liferay.asset.kernel.service.AssetEntryLocalServiceUtil'] />
+
+<#assign entry=assetEntryLocalServiceUtil.fetchAssetEntry(assetEntryQuery) />
+<#assign entryTitle = htmlUtil.escape(entry.getTitle(locale)) />
+<#assign docXml=saxReaderUtil.read(entry.getAssetRenderer().getArticle().getContent()) />
+<#assign Title=docXml.valueOf("//dynamic-element[@field-reference='title']/dynamic-content/text()") />
+<#assign Description=docXml.valueOf("//dynamic-element[@field-reference='description']/dynamic-content/text()") />
+```
