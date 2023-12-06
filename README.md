@@ -78,3 +78,12 @@ Full Details content code :-
 <#assign Title=docXml.valueOf("//dynamic-element[@field-reference='title']/dynamic-content/text()") />
 <#assign Description=docXml.valueOf("//dynamic-element[@field-reference='description']/dynamic-content/text()") />
 ```
+### Include a service in custom theme
+
+```
+<#if serviceLocator??>
+	<#assign assetCategoryService = serviceLocator.findService("com.liferay.asset.kernel.service.AssetCategoryService")
+	childCategories = assetCategoryService.getChildCategories(category.getCategoryId()) />
+	<@displayCategories categories=childCategories />
+</#if>
+```
