@@ -87,3 +87,97 @@ Full Details content code :-
 	<@displayCategories categories=childCategories />
 </#if>
 ```
+
+### Simple fragment and its configuration example
+
+```
+[#if configuration.type == "action"]
+	<button class="btn btn-${configuration.buttonSize} btn-${configuration.buttonType}" data-lfr-editable-id="action" data-lfr-editable-type="action">
+		Go Somewhere
+	</button>
+
+	[#else]
+		<div class="component-button text-break">
+			<a class="btn btn-${configuration.buttonSize} btn-${configuration.buttonType}" data-lfr-editable-id="link" data-lfr-editable-type="link" href="" id="fragment-${fragmentEntryLinkNamespace}-link">
+				Go Somewhere
+			</a>
+		</div>
+[/#if]
+------------------------------------------------------------------------
+
+{
+	"fieldSets": [
+		{
+			"fields": [
+				{
+					"dataType": "string",
+					"defaultValue": "link",
+					"label": "type",
+					"name": "type",
+					"type": "select",
+					"typeOptions": {
+						"validValues": [
+							{
+								"value": "link"
+							},
+							{
+								"value": "action"
+							}
+						]
+					}
+				},
+				{
+					"dataType": "string",
+					"defaultValue": "primary",
+					"label": "style",
+					"name": "buttonType",
+					"type": "select",
+					"typeOptions": {
+						"validValues": [
+							{
+								"value": "primary"
+							},
+							{
+								"value": "secondary"
+							},
+							{
+								"value": "link"
+							},
+							{
+								"value": "outline-primary"
+							},
+							{
+								"value": "outline-secondary"
+							}
+						]
+					}
+				},
+				{
+					"dataType": "string",
+					"defaultValue": "nm",
+					"label": "size",
+					"name": "buttonSize",
+					"type": "select",
+					"typeOptions": {
+						"validValues": [
+							{
+								"label": "small",
+								"value": "sm"
+							},
+							{
+								"label": "normal",
+								"value": "nm"
+							},
+							{
+								"label": "large",
+								"value": "lg"
+							}
+						]
+					}
+				}
+			],
+			"label": "button-options"
+		}
+	]
+}
+```
