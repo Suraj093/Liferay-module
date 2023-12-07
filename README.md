@@ -1,8 +1,8 @@
 # Liferay-module
 
-### Create custom layout and append with the custom theme.
+### # Create custom layout and append with the custom theme.
 
-#### Follow the step which mention below.
+#### # Follow the step which mention below.
 
 theme folder -> layouttpl -> custom -> custom layout folder -> place your .ftl file and image file.
 
@@ -19,7 +19,7 @@ The below code is going to update in WEB-INF under theme.
 </layout-templates>
 ```
 
-### To include external CSS and JS file in liferay theme, we use this
+### # To include external CSS and JS file in liferay theme, we use this
 
 ```
 <@liferay.css file_name="${css_folder}/all.css"/>
@@ -29,7 +29,7 @@ The below code is going to update in WEB-INF under theme.
 <#include "${full_templates_path}/top-navbar.ftl" />
 ```
 
-### Create custom widget template and get structure value in widget template
+### # Create custom widget template and get structure value in widget template
 
 ```
 <#if entries?has_content>
@@ -78,7 +78,7 @@ Full Details content code :-
 <#assign Title=docXml.valueOf("//dynamic-element[@field-reference='title']/dynamic-content/text()") />
 <#assign Description=docXml.valueOf("//dynamic-element[@field-reference='description']/dynamic-content/text()") />
 ```
-### Include a service in custom theme
+### # Include a service in custom theme
 
 ```
 <#if serviceLocator??>
@@ -88,7 +88,7 @@ Full Details content code :-
 </#if>
 ```
 
-### Simple fragment and its configuration example
+### # Simple fragment and its configuration example
 
 ```
 [#if configuration.type == "action"]
