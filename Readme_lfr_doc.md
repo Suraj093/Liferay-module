@@ -58,3 +58,15 @@ Example :-
 
 
 ```
+### # How to use JSTL TAG in Liferay
+
+```
+<c:choose>
+		<c:when test="<%= currentRoleTypeContributor.getType() == RoleConstants.TYPE_REGULAR %>">
+			<liferay-ui:success key="roleCreated" message='<%= LanguageUtil.format(request, "x-was-created-successfully.-you-can-now-define-its-permissions-and-assign-users", HtmlUtil.escape(roleName)) %>' />
+		</c:when>
+		<c:otherwise>
+			<liferay-ui:success key="roleCreated" message='<%= LanguageUtil.format(request, "x-was-created-successfully.-you-can-now-define-its-permissions", HtmlUtil.escape(roleName)) %>' />
+		</c:otherwise>
+	</c:choose>
+```
