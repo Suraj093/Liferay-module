@@ -70,3 +70,23 @@ Example :-
 		</c:otherwise>
 	</c:choose>
 ```
+
+### # How to use select box in Liferay AUI
+
+```
+<aui:select label="type" name="roleType">
+
+							<%
+							for (RoleTypeContributor roleTypeContributor : RoleTypeContributorRetrieverUtil.getRoleTypeContributors(request)) {
+							%>
+
+								<aui:option label="<%= roleTypeContributor.getName() %>" value="<%= roleTypeContributor.getType() %>" />
+
+							<%
+							}
+							%>
+
+						</aui:select>
+
+```
+
