@@ -1,4 +1,4 @@
-### #Liferay Frontend Tag Library
+### # Liferay Frontend Tag Library
 ```
 <%@ taglib prefix="liferay-frontend" uri="http://liferay.com/tld/frontend" %>
 <@liferay_frontend["tag-name"] attribute="string value" attribute=10 />
@@ -37,5 +37,24 @@ Example :-
     direction="right cadmin"
     portletConfigurationIcons=portlet_configuration_icons
 />
+
+```
+
+### # ActionURL and RenderURL Example
+
+```
+<portlet:actionURL name="editRole" var="editRoleURL">
+	<portlet:param name="mvcPath" value="/edit_role.jsp" />
+	<portlet:param name="backURL" value="<%= backURL %>" />
+</portlet:actionURL>
+
+<portlet:renderURL var="editRoleRenderURL">
+	<portlet:param name="mvcPath" value="/edit_role.jsp" />
+	<portlet:param name="tabs1" value="details" />
+	<portlet:param name="backURL" value="<%= backURL %>" />
+	<portlet:param name="roleId" value="<%= String.valueOf(roleId) %>" />
+	<portlet:param name="roleType" value="<%= String.valueOf(currentRoleTypeContributor.getType()) %>" />
+</portlet:renderURL>
+
 
 ```
