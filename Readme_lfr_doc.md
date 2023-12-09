@@ -75,18 +75,17 @@ Example :-
 
 ```
 <aui:select label="type" name="roleType">
+<%
+for (RoleTypeContributor roleTypeContributor : RoleTypeContributorRetrieverUtil.getRoleTypeContributors(request)) {
+%>
 
-							<%
-							for (RoleTypeContributor roleTypeContributor : RoleTypeContributorRetrieverUtil.getRoleTypeContributors(request)) {
-							%>
+<aui:option label="<%= roleTypeContributor.getName() %>" value="<%= roleTypeContributor.getType() %>" />
 
-								<aui:option label="<%= roleTypeContributor.getName() %>" value="<%= roleTypeContributor.getType() %>" />
+<%
+}
+%>
 
-							<%
-							}
-							%>
-
-						</aui:select>
+</aui:select>
 
 ```
 
