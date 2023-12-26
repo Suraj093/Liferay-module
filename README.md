@@ -183,3 +183,11 @@ Full Details content code :-
 	]
 }
 ```
+
+### # Inject Liferay Service in Custom Portlet
+
+```
+compileOnly project(":modules:guestbook:guestbook-api")
+compileOnly project(":modules:guestbook:guestbook-service")
+```
+
