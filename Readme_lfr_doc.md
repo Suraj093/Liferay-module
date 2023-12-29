@@ -89,3 +89,13 @@ for (RoleTypeContributor roleTypeContributor : RoleTypeContributorRetrieverUtil.
 
 ```
 
+### # Embedding Widgets via Templates
+
+```
+<@liferay_portlet["runtime"]
+    instanceID="INSTANCE_ID"
+    portletName="PORTLET_NAME"
+/>
+
+```
+
