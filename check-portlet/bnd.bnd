@@ -1,0 +1,4 @@
+Bundle-Name: check-portlet
+Bundle-SymbolicName: com.liferay.bucket.web
+Bundle-Version: 1.0.0
+Export-Package: com.liferay.bucket.web.constants
