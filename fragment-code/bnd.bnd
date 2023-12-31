@@ -1,0 +1,4 @@
+Bundle-Name: fragment-code
+Bundle-SymbolicName: fragment.code
+Bundle-Version: 1.0.0
+Export-Package: fragment.code.constants
